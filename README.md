@@ -1,65 +1,78 @@
-**AGRO-IQ*** 
-AGRO-IQ es una plataforma inteligente orientada a la analítica, simulación y toma de
-decisiones estratégicas para el sector agropecuario. El sistema implementa una arquitectura
-basada en agentes inteligentes autónomos (orquestador, estrategia, auditoría y analítica)
-combinada con un potente dashboard interactivo.
-️ Estructura del Proyecto
-El repositorio está organizado como un monorepo dividido en dos componentes principales:
-● backend-agro/: Sistema de backend desarrollado en Python. Implementa arquitectura
-hexagonal (puertos y adaptadores) y un ecosistema de agentes basados en LLMs para
-procesamiento y auditoría de datos agrícolas.
-● frontend-agro/: Interfaz de usuario web construida con Next.js, React y TypeScript,
-diseñada para visualizar dashboards analíticos, métricas de resiliencia y controles de
-simulación en tiempo real.
- *Tecnologías Utilizadas*
-Backend
-● Lenguaje: Python 3.14+
-● Base de Datos: SQLite (agro_iq.db)
-● Core: Arquitectura de Agentes Inteligentes (Orchestrator, Strategy Agent, Auditor Agent,
-Analytics).
-● Integraciones: Microsoft IQ API para ingesta y validación de datos del sector.
-Frontend
-● Framework: Next.js (App Router)
-● Lenguaje: TypeScript
-● Estilos: Tailwind CSS / Custom Design Tokens
-● Herramientas de Calidad: ESLint
+AGRO-IQ: AI-Driven Analytics and
+Orchestration for Sustainable
+Agriculture
+Line Spacing: 1.15
+1. Executive Summary
+AGRO-IQ is an enterprise-grade agricultural decision-intelligence platform engineered to
+optimize yield performance, mitigate economic risk, and streamline strategic planning for the
+agricultural sector. Developed tailored for the Microsoft Hackathon, the platform integrates an
+advanced Multi-Agent Autonomous Architecture with a high-fidelity visual analytics dashboard.
+By leveraging large language models (LLMs) alongside specialized data ingestion endpoints,
+AGRO-IQ transforms granular environmental and market data into prescriptive, audited action
+plans.
+2. System Architecture Overview
+The repository is structured as a decoupled monorepo implementing Clean Architecture and
+Hexagonal Domain-Driven Design principles. This guarantees loose coupling, high testability,
+and clear separation of concerns across the stack.
+Component Directory Path Architectural Responsibility
+Backend Services backend-agro/ Encapsulates core domain
+business logic, ports/adapters
+interface, multi-agent
+orchestrations, and
+asynchronous data persistence
+layer.
 
-*Configuración e Instalación*
-Requisitos Previos
-● Python 3.14 o superior instalado.
-● Node.js (versión LTS recomendada) y npm/pnpm.
+Frontend Client frontend-agro/ Provides an analytical UI driven
+by React Server Components,
+custom design tokens, and
+real-time state visualization.
 
-1. Configuración del Backend 
-1. Navega al directorio del backend:
+3. Core Technology Stack
+Backend Pipeline
+● Language Runtime: Python 3.14+ utilizing strict structural typing and object-oriented
+abstractions.
+● Data Layer: SQLite engine embedded local persistence (agro_iq.db) mapped to relational
+
+structures.
+● Intelligence Layer: Custom LLM Integration Tier mapped onto agent abstractions
+(Orchestrator, Strategy Agent, Auditor Agent, and Analytics Core).
+● External Ingestion: Integrated with Microsoft IQ APIs for context-aware validation,
+validation matrix tracking, and compliance checking.
+Frontend Infrastructure
+● Application Framework: Next.js (utilizing App Router optimization paradigm) built on
+React.
+● Language: TypeScript (Strict mode compiled for absolute type-safety).
+● Style Compilation: Tailwind CSS optimized via automated PostCSS design token
+compilation.
+● Code Quality Controls: Rigid ESLint static analysis matrix configuration.
+4. Multi-Agent System Engine
+The platform delegates analytical and strategic workloads across an interconnected network of
+autonomous logical entities:
+1. Orchestrator: Intercepts incoming inputs, establishes state synchronization across the
+knowledge bases, and routes data pipelines dynamically to sub-agents.
+2. Strategy Agent: Executes economic scenario forecasting, macro-variable
+cross-referencing, and continuous strategy iteration for resource management.
+3. Auditor Agent: Asserts analytical data integrity, flags anomalies, and enforces
+cryptographic or structural conformance validations prior to transaction logging.
+4. Analytics Engine: Runs deterministic and stochastic mathematical models calculating
+Return on Investment (ROI) matrixes and geographical risk distribution metrics.
+5. Installation and Environment Setup
+Prerequisites
+● Python 3.14 or higher runtime interface configured.
+● Node.js (LTS Version Active) managed via npm or pnpm packaging protocols.
+Backend Deployment Steps
 cd backend-agro
-2. Crea tu archivo de configuración ambiental a partir de la plantilla:
 cp .env.example .env.local
-Nota: Asegúrate de configurar tus llaves de API para los servicios de LLM y Microsoft IQ en
-.env.local.
-3. Si necesitas reiniciar o limpiar la base de datos local SQLite para pruebas, puedes ejecutar:
+Modify .env.local to populate required LLM operational credentials, connection paths, and
+Microsoft IQ service access tokens.
+To purge and execute an initialization sequence for the local relational database matrix:
 python clear_bd.py
-4. Ejecuta el archivo principal o las pruebas rápidas de agentes para verificar que todo
-funcione:
+To launch primary execution threads or conduct fast-path integration runtime tests for agents:
 python main.py
 python quick_test.py
 
-2. Configuración del Frontend 🌐
-1. Navega al directorio del frontend:
+Frontend Interface Deployment Steps
 cd ../frontend-agro
-2. Instala todas las dependencias requeridas:
 npm install
-3. Inicia el servidor de desarrollo local:
 npm run dev
-4. Abre tu navegador e ingresa a http://localhost:3000 para interactuar con la plataforma.
-🧠 Arquitectura de Agentes (Backend)
-El backend delega las tareas complejas a un pipeline especializado de agentes interactivos:
-● Orchestrator: Coordina el flujo de información entre el usuario, la base de conocimientos
-y los agentes secundarios.
-● Strategy Agent: Analiza escenarios económicos y agrícolas para proponer planes de
-acción optimizados.
-● Auditor Agent: Verifica la consistencia de los datos e historiales antes de consolidar
-reportes financieros o de rendimiento.
-● Analytics Engine: Procesa simulaciones estadísticas de ROI y distribuciones de riesgo.
-Puedes consultar más detalles técnicos sobre el comportamiento de los agentes en el archivo
-
-específico frontend-agro/AGENTS.md.
+Upon successful compilation, navigate to http://localhost:3000 to view the interface instance.
