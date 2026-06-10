@@ -1,0 +1,48 @@
+/* styles/designTokens.css */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Color palette (HSL based) */
+  --primary-h: 166; /* emerald */
+  --primary-s: 55%;
+  --primary-l: 45%;
+  --secondary-h: 45; /* amber */
+  --secondary-s: 100%;
+  --secondary-l: 50%;
+  --danger-h: 0; /* red */
+  --danger-s: 78%;
+  --danger-l: 55%;
+  --bg-light: hsl(210, 10%, 98%);
+  --bg-dark: hsl(210, 10%, 10%);
+  --card-bg-light: hsla(var(--primary-h), 30%, 95%, 0.6);
+  --card-bg-dark: hsla(var(--primary-h), 30%, 20%, 0.6);
+}
+
+/* Global resets */
+html, body, #__next {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-family);
+  background: var(--bg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-dark);
+  }
+}
+
+/* Utility classes for gradients and glassmorphism */
+.bg-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-primary { color: hsl(var(--primary-h), var(--primary-s), var(--primary-l)); }
+.text-secondary { color: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l)); }
+.text-danger { color: hsl(var(--danger-h), var(--danger-s), var(--danger-l)); }
