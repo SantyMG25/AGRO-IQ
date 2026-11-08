@@ -75,4 +75,4 @@ Frontend Interface Deployment Steps
 cd ../frontend-agro
 npm install
 npm run dev
-Upon successful compilation, navigate to http://localhost:3000 to view the interface instance.
+
